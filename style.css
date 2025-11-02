@@ -1,0 +1,273 @@
+:root {
+    font-size: smaller;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    font-size: 1.5em !important;
+    font-weight: normal !important;
+    margin-bottom: 0 !important;
+}
+
+h2 {
+    font-size: 1.25em !important;
+    font-weight: normal !important;
+    padding: 0.5em;
+}
+
+.min-h-50 {
+    min-height: 50%;
+}
+
+.max-h-100 {
+    max-height: 100% !important;
+}
+
+.flex-grow-2 {
+    flex-grow: 2 !important;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.scrollbar-hidden {
+    scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+.nopadding {
+    padding: 0 8px !important;
+    margin: 0 !important;
+}
+
+.rowone,
+.rowtwo {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+}
+
+.visualization-container,
+.chart-container,
+.details-panel,
+.tabular-chart-container,
+.map-container {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    min-height: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+    position: relative;
+}
+
+.section-header {
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 15px;
+}
+
+#projection-view,
+#comparison-chart,
+#tabular-view,
+#world-map {
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow: visible;
+}
+
+.view-placeholder::after {
+    content: 'No data loaded...';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.happiness-table,
+#attribute-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.happiness-table th,
+.happiness-table td,
+#attribute-table th,
+#attribute-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#attribute-table th {
+    background-color: #f3f3f3;
+}
+
+.happiness-table th.sortable {
+    cursor: pointer;
+}
+
+.happiness-table th.sortable:hover {
+    background-color: #f5f5f5;
+}
+
+.happiness-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.table-fixed {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.table-fixed th,
+.table-fixed td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-fixed th {
+    background: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table-fixed tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-fixed tr.selected {
+    background-color: #e3f2fd;
+}
+
+.tool-tip {
+    position: absolute;
+    display: none;
+    border-radius: 0.5em;
+    background-color: #444444;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.area-dist-chart path {
+    fill: #88b4d6;
+    stroke: #9ec2dd;
+    stroke-width: 1.5;
+}
+
+.area-dist-chart line {
+    stroke: gray;
+    stroke-width: 1;
+}
+
+.divergence-chart .baseline {
+    stroke: #888dd6;
+    stroke-dasharray: 3, 3;
+    stroke-width: 1.5;
+}
+
+.divergence-chart-bar {
+    fill: #88b4d6;
+}
+
+.divergence-chart-bar-highlight {
+    fill: #9970ab;
+}
+
+.divergence-chart-bar-dominated {
+    fill: grey;
+    opacity: 70%;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+.sortable:hover {
+    background-color: #e9e9e9;
+}
+
+.country.selected {
+    stroke: #000;
+    stroke-width: 2px;
+    fill-opacity: 0.8;
+}
+
+.country.selected {
+    stroke-width: 3px !important;
+    stroke: #000 !important;
+}
+
+.popup {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.zoom-controls {
+    position: absolute;
+    top: 60px; 
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    pointer-events: all;
+}
+
+.zoom-controls button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-controls button:hover {
+    background: #f0f0f0;
+}
+
+.map-column {
+    border: 1px solid grey;
+}
+
+.year-slider-section {
+    border-top: 1px solid grey;
+    padding-top: 10px;
+}
